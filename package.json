@@ -1,0 +1,19 @@
+{
+  "name": "grav-bot",
+  "productName": "Grav Bot Public Preview",
+  "version": "0.1.0",
+  "description": "Experimental community multi-agent desktop studio for the Antigravity CLI",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "check": "node --check main.js && node --check preload.js && node --input-type=module --check < renderer/app.js",
+    "test": "node --test tests/*.test.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "electron": "45.1.0"
+  }
+}

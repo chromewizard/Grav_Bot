@@ -1,0 +1,17 @@
+node_modules/
+dist/
+out/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.dmg
+*.app/
+*.log
+persistence/
+dropped/
+workspace/
+settings*.json
+private*seed*.json
+transcripts*/
+_archive*/
