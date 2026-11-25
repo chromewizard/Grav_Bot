@@ -1159,8 +1159,10 @@ function createMainWindow() {
 }
 
 app.whenReady().then(() => {
-  const iconPath = path.join(__dirname, 'renderer', 'gravbot-icon.svg');
-  if (process.platform === 'darwin' && app.dock && fs.existsSync(iconPath)) {
+  const iconPath = ['gravbot-icon.png', 'gravbot-icon.svg']
+    .map((name) => path.join(__dirname, 'renderer', name))
+    .find((candidate) => fs.existsSync(candidate));
+  if (process.platform === 'darwin' && app.dock && iconPath) {
     try {
       const img = nativeImage.createFromBuffer(fs.readFileSync(iconPath));
       if (img && !img.isEmpty()) app.dock.setIcon(img);
